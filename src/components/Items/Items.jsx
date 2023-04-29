@@ -15,7 +15,7 @@ const Items = ({ items, setItems }) => {
             .then(res => res.json())
             .then(data => {
                 setItems(data.data.tools) 
-                setHideBtn(true) //for hide show all button
+                setHideBtn(true) //for hide 'show all button'
                 setIsLoader(false) //loader
             })
     }, [])

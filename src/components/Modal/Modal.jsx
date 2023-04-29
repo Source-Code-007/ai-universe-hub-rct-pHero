@@ -4,6 +4,8 @@ const Modal = ({ singleItemId }) => {
     let [singleData, setSingleData] = useState([])
     let { description, features, integrations, image_link, pricing, input_output_examples } = singleData
     let bgForPricing = ['bg-orange-500', 'bg-green-500', 'bg-red-500']
+
+    // load data
     useEffect(() => {
         fetch(`https://openapi.programming-hero.com/api/ai/tool/${singleItemId}`)
             .then(res => res.json())

@@ -3,18 +3,10 @@ import React from 'react';
 const Title = ({items, setItems}) => {
     // sorting data
     let sortFunc = ()=>{
-        let sortItems = [...items].sort((itemOne, itemTwo)=>{
-            let date1 = new Date(itemOne.published_in)
-            let date2 = new Date(itemTwo.published_in)
-            if(date1>date2){
-                return 1
-            } else if(date1<date2){
-                return -1
-            } else{
-                return 0
-            }
+        let sortItems = items.sort((a, b) => {
+            return new Date(a.published_in) - new Date(b.published_in)
         })
-        setItems(sortItems)
+        setItems([...sortItems])
     }
 
     return (
